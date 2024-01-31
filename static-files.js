@@ -6,12 +6,16 @@ const app = express();
 const PORT = 3000;
 
 // Make the images directory a publicly accessible asset
-app.use("/", express.static("public"));
+app.use(express.static("public"));
 
 //localhost:3000/kids-shoe.jpg
 
 app.get("/", (req, res, next) => {
   res.send("Home page");
+});
+
+app.get("/index.html", (req, res, next) => {
+  res.send("index.html");
 });
 
 app.get("/greet", (req, res, next) => {
